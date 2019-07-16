@@ -1,0 +1,14 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - media_entity_smugmug_remote
+id: remote_smugmug_image
+label: 'Remote SmugMug Image'
+description: 'Media type for remote SmugMug images for use in Staff Profiles.'
+source: remote_smugmug
+queue_thumbnail_downloads: false
+new_revision: false
+source_configuration:
+  source_field: field_media_remote_smugmug
+field_map: {  }

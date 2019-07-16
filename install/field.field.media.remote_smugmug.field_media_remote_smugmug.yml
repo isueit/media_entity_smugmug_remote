@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_media_remote_smugmug
+    - media.type.remote_smugmug_image
+id: media.remote_smugmug_image.field_media_remote_smugmug
+field_name: field_media_remote_smugmug
+entity_type: media
+bundle: remote_smugmug_image
+label: 'Remote SmugMug Url'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

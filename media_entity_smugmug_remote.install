@@ -1,0 +1,26 @@
+<?php
+
+/**
+ * @file
+ * Install and uninstall scripts
+ */
+
+/**
+ * Implements hook_install()
+ */
+function media_entity_smugmug_remote_install() {
+  $source = drupal_get_path('module', 'media_entity_smugmug_remote') . '/images/icons/RemoteImage.png';
+  $destination = \Drupal::config('media.settings')->get('icon_base_uri');
+  file_prepare_directory($destination, FILE_CREATE_DIRECTORY | FILE_MODIFY_PERMISSIONS);
+  if (!file_exists($destination . "/RemoteImage.png")) {
+    file_unmanaged_copy($source, $destination, FILE_EXISTS_ERROR);
+  }
+}
+
+/**
+ * Implements hook_uninstall()
+ */
+function media_entity_smugmug_remote_uninstall() {
+  //Remove storage to prevent error for reinstalling
+  \Drupal::configFactory()->getEditable('field.storage.media.field_media_remote_smugmug')->delete();
+}

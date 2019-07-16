@@ -1,0 +1,7 @@
+name: "SmugMug Remote Images"
+description: "SmugMug remote images embedded as media type"
+type: module
+package: ISUEO
+core: 8.x
+dependencies:
+  - media
